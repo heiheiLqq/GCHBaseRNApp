@@ -3,8 +3,10 @@
  */
 
 import * as  TestTestActions from './TestTestActions';
+import * as  RefreshDemoActons from './RefreshDemoActons';
 
 export  const TestActions = {
     ...TestTestActions,
+    ...RefreshDemoActons
 
 };

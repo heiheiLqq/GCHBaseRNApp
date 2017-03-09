@@ -11,9 +11,16 @@ import {
     ToastAndroid,
 } from 'react-native';
 import MainTabbar from './components/Base/MainTabbar/main';
+import RefreshDemo from './components/Test/RefreshDemo/main';
+import HeaderDemo from './components/Test/HeaderDemo/main';
+import DrawerDemo from './components/Test/DrawerDemo/main';
+
 
 const ROUTES = {
-    MainTabbar: MainTabbar,
+    MainTabbar,
+    RefreshDemo,
+    HeaderDemo,
+    DrawerDemo,
 }
 
 export default class Root extends Component {
@@ -34,6 +41,13 @@ export default class Root extends Component {
         switch (route.name){
             case 'MainTabbar':
                 return <Scene {...route.params}  navigator={navigator} />;
+            case 'RefreshDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+            case 'HeaderDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+            case 'DrawerDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+
 
         }
     }
@@ -59,7 +73,7 @@ export default class Root extends Component {
         const navigator = this.refs.navigator;
         const routers = navigator.getCurrentRoutes();
         console.log('当前路由长度：' + routers.length);
-        if (routers.length > 2) {
+        if (routers.length > 1) {
             navigator.pop();
             return true;//接管默认行为
         } else {

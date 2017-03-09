@@ -9,3 +9,11 @@ export function testRdeuxTest(test) {
         test: test
     }
 }
+
+export function downLoadData(array) {
+
+    return {
+        type: 'DATA_ARRAY',
+        array: array
+    }
+}

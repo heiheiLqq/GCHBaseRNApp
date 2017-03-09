@@ -19,26 +19,31 @@ import {
     View
 } from 'react-native';
 import NacigatorBar from '../../../../publics/components/NavigatorBar'
+
 export default class Main extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <NacigatorBar title = "汽车服务"/>
-                <Text style={styles.welcome}>
-                    {this.props.test}
-                </Text>
+                <NacigatorBar title = '购车惠' />
+                <View style = {{height:10}}></View>
+                <NacigatorBar title = '两边是图片' rightIconName = "icon_mine_setting" leftIconName = "icon_shop_local" />
+                <View style = {{height:10}}></View>
+                <NacigatorBar title = '两边是文字'  leftTextName = "呵呵" rightTextName = "哈哈"/>
+                <View style = {{height:10}}></View>
+                <NacigatorBar title = '两边是图标和文字' rightTextName = "呵呵" leftTextName = "哈哈" rightIconName = "icon_mine_setting" leftIconName = "icon_shop_local"/>
 
             </View>
         );
     }
     componentDidMount() {
-        this.props.actions.carServerRdeuxTest('My name is CarServers');
+        this.props.actions.gouCheHuiRdeuxTest('My name is GouChehui');
     }
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+
         backgroundColor: '#EBEBEB',
     },
     welcome: {

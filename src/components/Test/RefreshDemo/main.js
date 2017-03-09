@@ -25,8 +25,10 @@ class Main extends Component {
 
 function mapStateToProps(state) {
     return {
-        test: state.TestReducer.test,
-        array:state.TestReducer.array,
+        isRefreshing:state.RefreshDemoReducer.isRefreshing,
+        isLoadMore:state.RefreshDemoReducer.isLoadMore,
+        car:state.RefreshDemoReducer.car,
+        page:state.RefreshDemoReducer.page,
     };
 }
 

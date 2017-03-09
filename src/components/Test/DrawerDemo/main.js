@@ -25,8 +25,7 @@ class Main extends Component {
 
 function mapStateToProps(state) {
     return {
-        test: state.TestReducer.test,
-        array:state.TestReducer.array,
+
     };
 }
 

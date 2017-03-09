@@ -18,11 +18,13 @@ import {
     Text,
     View
 } from 'react-native';
+import NacigatorBar from '../../../../publics/components/NavigatorBar'
 
 export default class Main extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <NacigatorBar title = '购车惠'/>
                 <Text style={styles.welcome}>
                     {this.props.test}
                 </Text>
@@ -38,9 +40,8 @@ export default class Main extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+
+        backgroundColor: '#EBEBEB',
     },
     welcome: {
         fontSize: 20,

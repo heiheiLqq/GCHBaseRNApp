@@ -39,24 +39,24 @@ export default class Main extends Component {
         return (
             <TabNavigator>
                 {
-                    this._renderTabbarItem('汽车服务','CarServers','icon_tabbar_homepage','icon_tabbar_homepage_selected',<CarServers />)
+                    this._renderTabbarItem('汽车服务','CarServers','icon_tabbar_homepage','icon_tabbar_homepage_selected',<CarServers {...this.props}/>)
                 }
                 {
-                    this._renderTabbarItem('购车惠','GouChehui','icon_tabbar_merchant_normal','icon_tabbar_merchant_selected',<GouChehui />)
+                    this._renderTabbarItem('购车惠','GouChehui','icon_tabbar_merchant_normal','icon_tabbar_merchant_selected',<GouChehui {...this.props}/>)
                 }
                 {
-                    this._renderTabbarItem('车生活','CarLife','icon_tabbar_mine','icon_tabbar_mine_selected',<CarLife />)
+                    this._renderTabbarItem('车生活','CarLife','icon_tabbar_mine','icon_tabbar_mine_selected',<CarLife {...this.props}/>)
                 }
                 {
-                    this._renderTabbarItem('个人中心','UserCenter','icon_tabbar_misc','icon_tabbar_misc_selected',<UserCenter />)
+                    this._renderTabbarItem('个人中心','UserCenter','icon_tabbar_misc','icon_tabbar_misc_selected',<UserCenter {...this.props}/>)
                 }
                 {
-                    this._renderTabbarItem('测试','Test','icon_tabbar_misc','icon_tabbar_misc_selected',<Test />)
+                    this._renderTabbarItem('测试','Test','icon_tabbar_misc','icon_tabbar_misc_selected',<Test {...this.props}/>)
                 }
             </TabNavigator>
         );
     }
-
+    
     _renderTabbarItem(itemTitle,itemsSelectedTab,itemIconNormal,itemIconSelected,itemComponent){
         return(
             <TabNavigator.Item
