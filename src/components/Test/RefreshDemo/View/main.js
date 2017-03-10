@@ -24,6 +24,7 @@ import {
     TouchableOpacity,
     RefreshControl,
     ActivityIndicator,
+    InteractionManager
 } from 'react-native';
 import NacigatorBar from '../../../../publics/components/NavigatorBar'
 
@@ -44,14 +45,17 @@ export default class Main extends Component {
         });
     }
     componentDidMount() {
-        this._onRefresh();
+        InteractionManager.runAfterInteractions(() => {
+            this._onRefresh();
+
+        });
     }
     render(){
 
         const { car,isRefreshing,navigator} = this.props;
 
         return(
-            <View style = {{backgroundColor:'white'}}>
+            <View style = {{backgroundColor:'white',flex:1}}>
                 <NacigatorBar navigator = {navigator} rightIconName = "icon_mine_setting" leftIconName = "icon_shop_local" title = '刷新Demo'/>
                 <ListView //创建ListView
                     dataSource={this.dataSource.cloneWithRows(car)} //设置数据源

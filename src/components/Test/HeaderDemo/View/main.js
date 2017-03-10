@@ -26,7 +26,7 @@ export default class Main extends Component {
             <View style={styles.container}>
                 <NacigatorBar title = '购车惠' />
                 <View style = {{height:10}}></View>
-                <NacigatorBar title = '两边是图片' rightIconName = "icon_mine_setting" leftIconName = "icon_shop_local" />
+                <NacigatorBar title = '两边是图片' navigator = {this.props.navigator}  rightIconName = "icon_mine_setting" leftIconName = "icon_shop_local" />
                 <View style = {{height:10}}></View>
                 <NacigatorBar title = '两边是文字'  leftTextName = "呵呵" rightTextName = "哈哈"/>
                 <View style = {{height:10}}></View>

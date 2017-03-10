@@ -14,6 +14,9 @@ import MainTabbar from './components/Base/MainTabbar/main';
 import RefreshDemo from './components/Test/RefreshDemo/main';
 import HeaderDemo from './components/Test/HeaderDemo/main';
 import DrawerDemo from './components/Test/DrawerDemo/main';
+import ScrollTabDemo from './components/Test/ScrollTabDemo/main';
+import BannerDemo from './components/Test/BannerDemo/main';
+import HUDDemo from './components/Test/HUDDemo/main';
 
 
 const ROUTES = {
@@ -21,6 +24,9 @@ const ROUTES = {
     RefreshDemo,
     HeaderDemo,
     DrawerDemo,
+    ScrollTabDemo,
+    BannerDemo,
+    HUDDemo
 }
 
 export default class Root extends Component {
@@ -46,6 +52,12 @@ export default class Root extends Component {
             case 'HeaderDemo':
                 return <Scene {...route.params}  navigator={navigator} />;
             case 'DrawerDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+            case 'ScrollTabDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+            case 'BannerDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+            case 'HUDDemo':
                 return <Scene {...route.params}  navigator={navigator} />;
 
 
