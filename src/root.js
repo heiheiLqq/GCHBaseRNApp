@@ -17,6 +17,7 @@ import DrawerDemo from './components/Test/DrawerDemo/main';
 import ScrollTabDemo from './components/Test/ScrollTabDemo/main';
 import BannerDemo from './components/Test/BannerDemo/main';
 import HUDDemo from './components/Test/HUDDemo/main';
+import NormalCellDemo from './components/Test/NormalCellDemo/main';
 
 
 const ROUTES = {
@@ -26,7 +27,8 @@ const ROUTES = {
     DrawerDemo,
     ScrollTabDemo,
     BannerDemo,
-    HUDDemo
+    HUDDemo,
+    NormalCellDemo
 }
 
 export default class Root extends Component {
@@ -58,6 +60,8 @@ export default class Root extends Component {
             case 'BannerDemo':
                 return <Scene {...route.params}  navigator={navigator} />;
             case 'HUDDemo':
+                return <Scene {...route.params}  navigator={navigator} />;
+            case 'NormalCellDemo':
                 return <Scene {...route.params}  navigator={navigator} />;
 
 

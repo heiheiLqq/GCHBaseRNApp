@@ -32,6 +32,8 @@ import ScrollTabDemo from'../../ScrollTabDemo/main'
 import BannerDemo from'../../BannerDemo/main'
 import HUDDemo from'../../HUDDemo/main'
 
+import NormalCellDemo from'../../NormalCellDemo/main'
+
 export default class Main extends Component {
 
     constructor(props) {
@@ -56,7 +58,7 @@ export default class Main extends Component {
     }
     componentDidMount() {
 
-        this.props.actions.downLoadData(['列表Demo','HeaderDemo','react-native-drawer','react-native-scrollable-tab-view','react-native-swiper','react-native-hud-view']);
+        this.props.actions.downLoadData(['列表Demo','HeaderDemo','react-native-drawer','react-native-scrollable-tab-view','react-native-swiper','react-native-hud-view','NormalCellDemo']);
     }
     _renderRow(rowData, sectionID, rowID, highlightRow){
         return(
@@ -106,11 +108,18 @@ export default class Main extends Component {
                     component: BannerDemo,
 
                 });
-            }else {
+            }else if(rowID == 5){
 
                 navigator.push({
                     name: 'HUDDemo',
                     component: HUDDemo,
+
+                });
+            }else{
+
+                navigator.push({
+                    name: 'NormalCellDemo',
+                    component: NormalCellDemo,
 
                 });
             }

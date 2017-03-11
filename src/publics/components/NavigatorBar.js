@@ -59,7 +59,7 @@ export default class NavigatorBar extends Component {
             //右边只有图片
             return(
                 <TouchableOpacity onPress={()=>{this.props.rightItemClick}} style={styles.rightViewStyle}>
-                    <Image source={{uri: this.props.rightIconName}} style={styles.navImageStyle}/>
+                    <Image resizeMode = "contain"  source={{uri: this.props.rightIconName}} style={styles.navImageStyle}/>
                 </TouchableOpacity>
             );
         } else if (this.props.rightIconName.length == 0 && this.props.rightTextName.length > 0){
@@ -74,7 +74,7 @@ export default class NavigatorBar extends Component {
             return (
                 <TouchableOpacity onPress={()=>{this.props.rightItemClick}} style={styles.rightViewStyle}>
                     <Text style = {styles.navRightTextStyle}>{this.props.rightTextName}</Text>
-                    <Image source={{uri: this.props.rightIconName}} style={styles.navImageStyle}/>
+                    <Image resizeMode = "contain"  source={{uri: this.props.rightIconName}} style={styles.navImageStyle}/>
                 </TouchableOpacity>
             )
         }
