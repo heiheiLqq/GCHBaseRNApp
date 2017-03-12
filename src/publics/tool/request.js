@@ -1,7 +1,9 @@
 /**
  * Created by zzh on 2017/3/9.
  */
-
+import {
+    AsyncStorage,
+} from 'react-native';
 import {BaseApi} from '../static/config';
 import queryString from 'query-string';
 import _ from 'lodash';
@@ -21,6 +23,7 @@ request.get = (url ,params) =>{
 };
 request.post = (url,params) =>{
 
+
     url = BaseApi.api.base + url;
     // let map =
     //json对象的合并   工具：lodash
@@ -29,11 +32,12 @@ request.post = (url,params) =>{
     let map= _.extend(BaseApi.map,{
         body: JSON.stringify(params)
     });
-    console.log(map);
     return fetch(url,map).
         then((response)=> response.json())
         .then((response) =>response)
 
 };
+
+
 
 module.exports = request

@@ -18,18 +18,20 @@ export default class Main extends Component {
             <View style = {styles.bg}>
                 <NacigatorBar navigator = {this.props.navigator} title = "NormallCellDemo" leftIconName = "icon_shop_local"/>
                 <CommenCell isClick = {true} leftTitle="哈哈" leftIconName = 'avatar_vip' rightTitle="呵呵"/>
-                <CommenCell isClick = {true} leftTitle="哈哈"  rightTitle="呵呵"/>
-                <CommenCell cellDidClick={()=>{this._click()}} isClick = {true} leftTitle="哈哈" leftIconName = 'avatar_vip' />
+                <CommenCell cellDidClick={()=>{this._click()}} isClick = {true} leftTitle="昵称" rightTitle="黑黑"/>
                 <CommenCell  leftTitleColor ='red' rightTitleColor="green" leftTitle="哈哈" leftIconName = 'avatar_vip' rightTitle="呵呵"/>
 
                 <CommenCell isClick = {true} rightView = {<Switch />}  leftTitle="哈哈" leftIconName = 'avatar_vip' />
                 <CommenCell  rightView = {<TextInput
-                                                style={{height: 20, borderColor: 'gray', borderWidth: 1}}
+                                                style={{width:200,height: 20,}}
                                                 placeholder="Enter text to see events"
+                                                editable = {true}
                                            />}
                              leftTitle="哈哈"
                               />
                 <CommenCell isClick = {true} rightView = {<TestView />}  leftTitle="哈哈"  />
+                <CommenCell  leftTitle="订 单 号:   G8110020720690d"   />
+
 
             </View>
         );

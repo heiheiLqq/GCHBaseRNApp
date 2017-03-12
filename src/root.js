@@ -4,11 +4,16 @@
  */
 
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import Actions from './actions';
 import {
     Navigator,
     Platform,
     BackAndroid,
     ToastAndroid,
+    View,
+    Text,
 } from 'react-native';
 import MainTabbar from './components/Base/MainTabbar/main';
 import RefreshDemo from './components/Test/RefreshDemo/main';
@@ -31,18 +36,43 @@ const ROUTES = {
     NormalCellDemo
 }
 
-export default class Root extends Component {
-    render() {
-        let rootViewName = 'MainTabbar';
-        let rootComponent = MainTabbar;
+class Root extends Component {
 
-        return (
-            <Navigator
-                initialRoute = {{ name: rootViewName, component: rootComponent }}
-                ref="navigator"
-                renderScene={this._renderScene}
-                configureScene={this._configureScene}/>
-        );
+    componentDidMount(){
+        //进行登录
+        this.props.actions.logIn();
+    }
+
+    
+    render() {
+
+
+
+        if(this.props.loginState){
+            //登录成功
+            let rootViewName = 'MainTabbar';
+            let rootComponent = MainTabbar;
+
+            return (
+
+                <Navigator
+                    initialRoute = {{ name: rootViewName, component: rootComponent }}
+                    ref="navigator"
+                    renderScene={this._renderScene}
+                    configureScene={this._configureScene}/>
+            );
+
+        }else{
+            //登录失败
+            return(
+                <View style = {{flex:1,justifyContent:'center',alignItems:'center'}}>
+                    <Text>loading...</Text>
+                </View>
+            );
+
+        }
+
+
     }
     _renderScene = (route, navigator) => {
         let Scene = ROUTES[route.name];
@@ -108,3 +138,20 @@ export default class Root extends Component {
     };
 
 }
+function mapStateToProps(state) {
+    return {
+        loginState: state.LoginReducer.loginState
+
+    };
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(Actions, dispatch)
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Root);

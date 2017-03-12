@@ -4,6 +4,7 @@
 import {
      Platform,
      Dimensions,
+    AsyncStorage,
 } from 'react-native';
 
 export const DeviceInfo = {
@@ -24,13 +25,15 @@ export const BaseApi={
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'sessionid': "hanwuqia"
+            'sessionid': ''
         },
         follow: 20,
         timeout: 8000,
         size: 0,
-    }
+    },
+
 };
+
 
 export const BaseColor = {
     theme:'#2194fe',
