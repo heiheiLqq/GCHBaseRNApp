@@ -6,10 +6,13 @@ import {BaseApi} from '../../publics/static/config'
 
 import request from '../../publics/tool/request'
 
+import Type from '../../publics/actionsType'
+
+
 export function loginState(loginState) {
 
     return {
-        type: 'LOGIN_STATE',
+        type: Type.LOGIN_STATE,
         loginState: loginState
     }
 }

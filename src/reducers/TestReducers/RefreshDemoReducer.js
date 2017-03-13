@@ -4,6 +4,7 @@
 /**
  * Created by zzh on 2017/3/8.
  */
+import Type from '../../publics/actionsType'
 
 export default function(state = {
     isRefreshing: false,
@@ -14,7 +15,7 @@ export default function(state = {
 
 
     switch(action.type) {
-        case 'DEMO_REFRESH':
+        case Type.DEMO_REFRESH:
             return Object.assign({}, state, {
                 isRefreshing: action.isRefreshing,
                 isLoadMore: action.isLoadMore,

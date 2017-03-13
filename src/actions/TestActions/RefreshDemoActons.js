@@ -3,6 +3,7 @@
  */
 // import {BaseApi} from '../../publics/static/config';
 import request from '../../publics/tool/request'
+import Type from '../../publics/actionsType'
 
 //获取免费看低价列表
 
@@ -51,7 +52,7 @@ export function getFreeCarSource(item) {
 }
 function fetchFreePrice(car,isRefreshing,isLoadMore,page ) {
     return {
-        type: 'DEMO_REFRESH',
+        type: Type.DEMO_REFRESH,
         car,
         isRefreshing,
         isLoadMore,

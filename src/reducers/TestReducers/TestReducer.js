@@ -1,6 +1,7 @@
 /**
  * Created by zzh on 2017/3/8.
  */
+import Type from '../../publics/actionsType'
 
 export default function(state = {
     test: '',
@@ -9,9 +10,9 @@ export default function(state = {
 
 
     switch(action.type) {
-        case 'TEST_TEST':
+        case Type.TEST_TEST:
             return {...state, test: action.test};
-        case 'DATA_ARRAY':
+        case Type.DATA_ARRAY:
             return {...state, array: action.array};
 
     }
